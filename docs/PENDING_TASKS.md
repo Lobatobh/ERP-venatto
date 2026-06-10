@@ -2,10 +2,11 @@
 
 ## Pendencias reais
 
-- Fazer commit da Fase 0.4 somente com autorizacao explicita.
-- Criar Prisma schema somente em fase autorizada.
-- Configurar PostgreSQL somente em fase autorizada.
-- Definir autenticacao somente na Fase 1 autorizada.
+- Fazer commit da Fase 1.0 somente com autorizacao explicita.
+- Validar PostgreSQL local real somente em fase autorizada.
+- Executar migration somente em fase autorizada.
+- Configurar cliente Prisma compartilhado somente em fase autorizada.
+- Definir autenticacao somente em fase autorizada.
 - Criar funcionalidades de negocio somente nas fases correspondentes.
 - Instalar novos componentes shadcn/ui somente quando houver escopo aprovado.
 - Avaliar o `package-lock.json` existente no diretorio pai antes de qualquer remocao.

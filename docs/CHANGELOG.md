@@ -27,3 +27,15 @@
 - Revalidado `npm run lint` apos shadcn/ui.
 - Revalidado `npm run typecheck` apos shadcn/ui.
 - Revalidado `npm run build` apos shadcn/ui.
+- Criado commit local da UI Foundation: `7081fc3`.
+- Instalados Prisma e `@prisma/client` na linha 6.
+- Criado `prisma/schema.prisma` com provider PostgreSQL.
+- Criados `.env` local e `.env.example` sem credenciais reais.
+- Ajustado `.gitignore` para permitir versionar `.env.example` mantendo `.env*` protegido.
+- Criados modelos de fundacao SaaS `Tenant`, `User`, `Membership`, `Role`, `Permission` e `AuditLog`.
+- Validado `npx prisma format`.
+- Validado `npx prisma validate`.
+- Validado `npx prisma generate`.
+- Revalidado `npm run lint`.
+- Revalidado `npm run typecheck`.
+- Revalidado `npm run build`.

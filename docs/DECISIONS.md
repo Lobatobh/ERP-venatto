@@ -14,7 +14,7 @@ PostgreSQL e o banco oficial do projeto. SQLite nao sera tratado como arquitetur
 
 ## DEC-004 - Prisma como ORM
 
-Prisma sera o ORM oficial quando a fase de banco for autorizada.
+Prisma e o ORM oficial do projeto.
 
 ## DEC-005 - UI com Tailwind CSS e shadcn/ui
 
@@ -53,6 +53,18 @@ A Fase 0.4 adicionou somente `button`, `card` e `separator`. Outros componentes 
 ## DEC-013 - Auditoria npm apenas diagnostica
 
 A Fase 0.2 executou `npm audit --audit-level=moderate` sem `npm audit fix` e sem alterar dependencias por causa da auditoria.
+
+## DEC-014 - Prisma fixado na linha 6
+
+A instalacao inicial trouxe Prisma 7, mas Prisma 7 remove suporte a `url = env("DATABASE_URL")` no schema. Para cumprir a regra da Fase 1.0 e manter o datasource PostgreSQL no `schema.prisma`, Prisma e `@prisma/client` foram fixados na linha 6.
+
+## DEC-015 - Sem migration na Fase 1.0
+
+A Fase 1.0 cria e valida o schema Prisma, mas nao executa `prisma migrate dev`, `prisma db push` ou conexao com banco real.
+
+## DEC-016 - Modelos minimos SaaS
+
+A fundacao de dados inclui somente `Tenant`, `User`, `Membership`, `Role`, `Permission` e `AuditLog`. Modulos de negocio continuam fora do escopo.
 
 ## PR-001 - Validacao Docker/Dokploy antes de producao real
 
