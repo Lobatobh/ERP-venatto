@@ -19,4 +19,11 @@
 - Revalidado `npm run lint`.
 - Revalidado `npm run typecheck`.
 - Revalidado `npm run build`.
-- Inicializado Git local com `git init`, sem commit, push ou remote.
+- Inicializado Git local com `git init`, sem push ou remote.
+- Criado primeiro commit local da fundacao: `815f46a`.
+- Inicializado shadcn/ui na Fase 0.4 com preset `nova`, base `radix`, Tailwind CSS v4 e CSS variables.
+- Criados `components.json` e `src/lib/utils.ts`.
+- Adicionados componentes shadcn/ui `button`, `card` e `separator`.
+- Revalidado `npm run lint` apos shadcn/ui.
+- Revalidado `npm run typecheck` apos shadcn/ui.
+- Revalidado `npm run build` apos shadcn/ui.

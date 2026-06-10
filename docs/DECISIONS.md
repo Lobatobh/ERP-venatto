@@ -40,13 +40,17 @@ O `next.config.ts` define `turbopack.root` como `process.cwd()` para evitar infe
 
 ## DEC-010 - Git local inicializado sem commit
 
-A Fase 0.2 inicializou Git local apenas para preparar controle de baseline. Nenhum commit, push, branch extra ou remote foi criado.
+A Fase 0.2 inicializou Git local apenas para preparar controle de baseline. Nenhum push ou remote foi criado.
 
-## DEC-011 - shadcn/ui permanece fora da Fase 0.2
+## DEC-011 - shadcn/ui inicializado na Fase 0.4
 
-shadcn/ui nao foi instalado na Fase 0.2 para evitar antecipar decisoes de UI antes da fase autorizada.
+shadcn/ui foi inicializado com preset `nova`, base `radix`, Tailwind CSS v4, CSS variables, base color `neutral` e aliases `@/components`, `@/components/ui`, `@/lib` e `@/lib/utils`.
 
-## DEC-012 - Auditoria npm apenas diagnostica
+## DEC-012 - Componentes UI minimos da Fase 0.4
+
+A Fase 0.4 adicionou somente `button`, `card` e `separator`. Outros componentes de UI ficam pendentes para fases autorizadas.
+
+## DEC-013 - Auditoria npm apenas diagnostica
 
 A Fase 0.2 executou `npm audit --audit-level=moderate` sem `npm audit fix` e sem alterar dependencias por causa da auditoria.
 

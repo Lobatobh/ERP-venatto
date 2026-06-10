@@ -2,12 +2,12 @@
 
 ## Pendencias reais
 
-- Fazer primeiro commit somente com autorizacao explicita.
-- Configurar shadcn/ui somente em fase autorizada.
+- Fazer commit da Fase 0.4 somente com autorizacao explicita.
 - Criar Prisma schema somente em fase autorizada.
 - Configurar PostgreSQL somente em fase autorizada.
 - Definir autenticacao somente na Fase 1 autorizada.
 - Criar funcionalidades de negocio somente nas fases correspondentes.
+- Instalar novos componentes shadcn/ui somente quando houver escopo aprovado.
 - Avaliar o `package-lock.json` existente no diretorio pai antes de qualquer remocao.
 - Validar Docker/Dokploy em VPS real antes de producao real.
 
