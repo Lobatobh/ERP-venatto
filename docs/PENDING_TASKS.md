@@ -2,7 +2,7 @@
 
 ## Pendencias reais
 
-- Fazer push da Fase 1.7 somente com autorizacao explicita.
+- Configurar `INTERNAL_HEALTHCHECK_TOKEN` em ambiente real antes de expor healthcheck em producao.
 - Validar politica de backup/snapshot antes de qualquer uso com dados reais.
 - Definir autenticacao somente em fase autorizada.
 - Criar funcionalidades de negocio somente nas fases correspondentes.

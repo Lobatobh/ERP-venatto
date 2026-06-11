@@ -78,6 +78,10 @@ Foi escolhida conscientemente a opcao D: executar a migration inicial sem backup
 
 A Fase 1.7 criou `src/lib/prisma.ts` como ponto unico de acesso server-side ao Prisma Client, reutilizando instancia global em desenvolvimento para evitar multiplas conexoes durante hot reload.
 
+## DEC-020 - Healthcheck interno server-only
+
+A Fase 1.8 criou healthcheck server-only para conexao com banco usando Prisma e rota interna com resposta minima, sem dados sensiveis. Em producao, a rota depende de `INTERNAL_HEALTHCHECK_TOKEN`; sem token configurado, retorna 404.
+
 ## PR-001 - Validacao Docker/Dokploy antes de producao real
 
 Docker/Dokploy deve ser validado obrigatoriamente antes de producao real em VPS real.

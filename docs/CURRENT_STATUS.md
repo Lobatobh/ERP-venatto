@@ -2,13 +2,13 @@
 
 ## Fase atual
 
-Fase 1.7 - Prisma Client Foundation + Saude Tecnica Inicial.
+Fase 1.8 - Server-only Database Health Foundation.
 
 ## Status
 
-Cliente Prisma compartilhado server-side criado para uso interno do ERP, com protecao contra multiplas instancias em desenvolvimento/hot reload.
+Base server-only de saude do banco criada para validar a conexao com Supabase/PostgreSQL sem expor segredos, sem criar tela publica, sem auth e sem modulo de negocio.
 
-## Validacoes da Fase 1.7
+## Validacoes da Fase 1.8
 
 - `npx prisma validate`: executado com sucesso.
 - `npx prisma generate`: executado com sucesso.
@@ -19,21 +19,22 @@ Cliente Prisma compartilhado server-side criado para uso interno do ERP, com pro
 
 ## Escopo concluido nesta fase
 
-- Criado `src/lib/prisma.ts`.
-- Criado typecheck tecnico em `tests/prisma-client.typecheck.ts`.
-- Mantida ausencia de API publica, tela, login/auth, seed e modulos de negocio.
+- Criada funcao server-only `getDatabaseHealth`.
+- Criada rota interna `GET /api/internal/health/db` com resposta minima e sem dados sensiveis.
+- Rota exige token via `x-internal-health-token` em producao quando `INTERNAL_HEALTHCHECK_TOKEN` estiver definido; sem token configurado em producao, retorna 404.
+- Criado typecheck tecnico para importacao do healthcheck.
+- Mantida ausencia de seed, login/auth, telas, dashboard e modulos de negocio.
 - Mantido `prisma/schema.prisma` sem alteracao.
 - Nenhuma migration foi executada.
 - `prisma db push` nao foi usado.
 
 ## Escopo bloqueado
 
-- Criar API publica.
-- Criar seed.
-- Criar login/auth.
-- Criar telas.
+- Criar auth/login.
+- Criar tela publica.
 - Criar dashboard.
 - Criar modulos de negocio.
+- Criar seed.
 - Alterar schema Prisma sem fase autorizada.
 - Executar migration sem autorizacao explicita.
 - Executar `prisma db push`.

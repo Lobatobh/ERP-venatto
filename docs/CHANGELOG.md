@@ -53,8 +53,10 @@
 
 ## 2026-06-11
 
-- Criado cliente Prisma compartilhado server-side em `src/lib/prisma.ts`.
-- Criado typecheck tecnico para importacao do Prisma Client.
+- Enviado push do commit local `a16ba0e` para `origin/main`.
+- Criada fundacao server-only de healthcheck do banco em `src/server/db/health.ts`.
+- Criada rota interna `GET /api/internal/health/db` sem dados sensiveis.
+- Criado typecheck tecnico para o healthcheck do banco.
 - Revalidado `npx prisma validate`.
 - Revalidado `npx prisma generate`.
 - Revalidado `npm run lint`.
