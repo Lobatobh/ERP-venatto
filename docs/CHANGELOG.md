@@ -88,3 +88,7 @@
 - Implementado provisioning inicial explicito por server action/botao protegido, sem service role e sem execucao automatica ao acessar `/app`.
 - Adicionadas protecoes contra sobrescrita de vinculo auth, e-mail vinculado a outro `authUser.id` e owner duplicado no tenant `venatto`.
 - Registrado teste manual de provisioning como pendente.
+- Validada manualmente a Fase 2.3B com login real, provisioning inicial e tenant ativo `Venatto`.
+- Confirmado que o botao `Inicializar perfil interno da Venatto` criou/vinculou o perfil interno e nao aparece mais apos provisioning.
+- Validado logout/login pos-provisioning mantendo perfil interno provisionado e tenant ativo `Venatto`.
+- Removida pendencia de testar manualmente o botao de provisioning inicial.

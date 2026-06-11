@@ -2,11 +2,10 @@
 
 ## Pendencias reais
 
-- Testar manualmente o botao `Inicializar perfil interno da Venatto`.
-- Validar login/logout apos provisioning inicial.
 - Definir politica futura para adicionar novos usuarios ao tenant `venatto`.
 - Implementar RBAC completo em fase futura autorizada.
 - Criar dashboard real em fase futura autorizada.
+- Configurar deploy/staging.
 - Rotacionar secrets antes de producao.
 - Configurar `INTERNAL_HEALTHCHECK_TOKEN` em ambiente real antes de expor healthcheck em producao.
 - Configurar valores reais de Supabase apenas em ambiente local/seguro, nunca versionados.
