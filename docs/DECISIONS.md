@@ -74,6 +74,10 @@ O banco oficial do ERP nesta fase e o PostgreSQL do Supabase self-hosted. A cone
 
 Foi escolhida conscientemente a opcao D: executar a migration inicial sem backup/snapshot confirmado, porque o ambiente ainda nao e producao e nao contem dados reais, clientes, login/auth do ERP, telas operacionais ou modulos de negocio.
 
+## DEC-019 - Cliente Prisma compartilhado server-side
+
+A Fase 1.7 criou `src/lib/prisma.ts` como ponto unico de acesso server-side ao Prisma Client, reutilizando instancia global em desenvolvimento para evitar multiplas conexoes durante hot reload.
+
 ## PR-001 - Validacao Docker/Dokploy antes de producao real
 
 Docker/Dokploy deve ser validado obrigatoriamente antes de producao real em VPS real.

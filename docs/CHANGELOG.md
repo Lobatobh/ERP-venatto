@@ -48,3 +48,15 @@
 - Revalidado `npm run lint` apos migration.
 - Revalidado `npm run typecheck` apos migration.
 - Revalidado `npm run build` apos migration.
+- Criado commit local da migration inicial: `cdb9c0f`.
+- Configurado remote GitHub e enviado primeiro push para `main`.
+
+## 2026-06-11
+
+- Criado cliente Prisma compartilhado server-side em `src/lib/prisma.ts`.
+- Criado typecheck tecnico para importacao do Prisma Client.
+- Revalidado `npx prisma validate`.
+- Revalidado `npx prisma generate`.
+- Revalidado `npm run lint`.
+- Revalidado `npm run typecheck`.
+- Revalidado `npm run build`.
