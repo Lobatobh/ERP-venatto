@@ -4,9 +4,7 @@
 
 - Configurar `INTERNAL_HEALTHCHECK_TOKEN` em ambiente real antes de expor healthcheck em producao.
 - Configurar valores reais de Supabase apenas em ambiente local/seguro, nunca versionados.
-- Configurar `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY` no `.env` local para validar login real.
-- Criar usuario admin inicial manualmente no Supabase Studio e validar o checklist da Fase 2.1.
-- Testar login manualmente com usuario real do Supabase Auth em ambiente seguro.
+- Validar fluxo de auth em ambiente de staging/producao quando houver deploy autorizado.
 - Implementar cadastro, recuperacao de senha, RBAC e multi-tenant enforcement somente em fases autorizadas.
 - Validar politica de backup/snapshot antes de qualquer uso com dados reais.
 - Criar funcionalidades de negocio somente nas fases correspondentes.
