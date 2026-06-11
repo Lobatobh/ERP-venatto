@@ -58,13 +58,21 @@ A Fase 0.2 executou `npm audit --audit-level=moderate` sem `npm audit fix` e sem
 
 A instalacao inicial trouxe Prisma 7, mas Prisma 7 remove suporte a `url = env("DATABASE_URL")` no schema. Para cumprir a regra da Fase 1.0 e manter o datasource PostgreSQL no `schema.prisma`, Prisma e `@prisma/client` foram fixados na linha 6.
 
-## DEC-015 - Sem migration na Fase 1.0
+## DEC-015 - Migration versionavel como padrao
 
-A Fase 1.0 cria e valida o schema Prisma, mas nao executa `prisma migrate dev`, `prisma db push` ou conexao com banco real.
+O projeto usa Prisma Migrate para alteracoes versionaveis de schema. `prisma db push` nao deve ser usado como fluxo oficial.
 
 ## DEC-016 - Modelos minimos SaaS
 
 A fundacao de dados inclui somente `Tenant`, `User`, `Membership`, `Role`, `Permission` e `AuditLog`. Modulos de negocio continuam fora do escopo.
+
+## DEC-017 - Supabase self-hosted como banco da fundacao
+
+O banco oficial do ERP nesta fase e o PostgreSQL do Supabase self-hosted. A conexao local via `.env` nao deve ser versionada nem exposta.
+
+## DEC-018 - Risco assumido sem backup na migration inicial
+
+Foi escolhida conscientemente a opcao D: executar a migration inicial sem backup/snapshot confirmado, porque o ambiente ainda nao e producao e nao contem dados reais, clientes, login/auth do ERP, telas operacionais ou modulos de negocio.
 
 ## PR-001 - Validacao Docker/Dokploy antes de producao real
 

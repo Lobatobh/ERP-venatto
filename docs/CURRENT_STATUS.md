@@ -2,49 +2,44 @@
 
 ## Fase atual
 
-Fase 1.0 - Fundacao de Dados.
+Fase 1.4 - Migration Inicial Versionavel no Supabase Self-Hosted.
 
 ## Status
 
-Fundacao de dados SaaS criada com Prisma e PostgreSQL, sem migration, sem db push e sem conexao com banco real.
+Migration inicial versionavel criada e aplicada no PostgreSQL do Supabase self-hosted, usando Prisma Migrate. `prisma db push` nao foi usado.
 
-## Validacoes da Fase 1.0
+## Validacoes da Fase 1.4
 
-- `npm install @prisma/client`: executado.
-- `npm install -D prisma`: executado.
-- `npx prisma init --datasource-provider postgresql`: tentado, mas recusado porque a pasta `prisma/` ja existia.
-- Configuracao Prisma equivalente criada manualmente com provider PostgreSQL.
-- `npx prisma format`: executado com sucesso.
-- `npx prisma validate`: executado com sucesso.
-- `npx prisma generate`: executado com sucesso.
+- `git status --short`: executado antes da migration, sem alteracoes pendentes.
+- `npx prisma validate`: executado antes da migration com sucesso.
+- `SELECT 1` via Prisma: executado antes da migration com sucesso.
+- `npx prisma migrate dev --name init_saas_foundation`: executado com sucesso.
+- `npx prisma validate`: executado apos a migration com sucesso.
+- `npx prisma generate`: executado apos a migration com sucesso.
 - `npm run lint`: executado com sucesso.
 - `npm run typecheck`: executado com sucesso.
 - `npm run build`: executado com sucesso.
 
 ## Escopo concluido nesta fase
 
-- Criado `prisma/schema.prisma`.
-- Criado `.env` local ignorado pelo Git.
-- Criado `.env.example` sem credenciais reais.
-- Ajustado `.gitignore` para manter `.env*` protegido e permitir versionar `.env.example`.
-- Criados somente modelos de fundacao SaaS: `Tenant`, `User`, `Membership`, `Role`, `Permission` e `AuditLog`.
-- Confirmado provider `postgresql`.
-- Confirmada ausencia de SQLite e arquivos `.db`.
+- Criada migration `init_saas_foundation`.
+- Aplicada a fundacao SaaS minima no banco Supabase self-hosted.
+- Criado historico versionavel em `prisma/migrations/`.
+- Mantida ausencia de seed, login, telas, dashboard e modulos de negocio.
+
+## Decisao de risco
+
+Foi escolhida conscientemente a opcao D: executar a migration inicial sem backup/snapshot confirmado, por se tratar de ambiente inicial sem producao, sem dados reais, sem clientes, sem login/auth do ERP, sem telas operacionais e sem modulos de negocio.
 
 ## Escopo bloqueado
 
-- Criar Cliente.
-- Criar Projeto.
-- Criar Pedido.
-- Criar Producao.
-- Criar Estoque.
-- Criar Financeiro.
-- Criar CRM.
-- Criar telas.
-- Criar login completo.
-- Criar seed.
-- Executar `prisma migrate dev`.
 - Executar `prisma db push`.
+- Criar seed.
+- Criar login.
+- Criar telas.
+- Criar dashboard.
+- Criar modulos de negocio.
+- Alterar `.env.example` com segredos reais.
 - Fazer commit sem autorizacao explicita.
 - Fazer push.
 - Avancar para proxima fase sem autorizacao.

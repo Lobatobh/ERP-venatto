@@ -39,3 +39,12 @@
 - Revalidado `npm run lint`.
 - Revalidado `npm run typecheck`.
 - Revalidado `npm run build`.
+- Criado commit local da fundacao de dados: `bfd84a1`.
+- Revalidada conectividade com Supabase self-hosted via `SELECT 1`.
+- Registrada decisao consciente de executar migration inicial sem backup/snapshot confirmado por nao se tratar de producao.
+- Criada e aplicada migration versionavel `init_saas_foundation` no Supabase self-hosted.
+- Revalidado `npx prisma validate` apos migration.
+- Revalidado `npx prisma generate` apos migration.
+- Revalidado `npm run lint` apos migration.
+- Revalidado `npm run typecheck` apos migration.
+- Revalidado `npm run build` apos migration.
