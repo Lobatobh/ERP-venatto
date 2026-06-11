@@ -82,6 +82,10 @@ A Fase 1.7 criou `src/lib/prisma.ts` como ponto unico de acesso server-side ao P
 
 A Fase 1.8 criou healthcheck server-only para conexao com banco usando Prisma e rota interna com resposta minima, sem dados sensiveis. Em producao, a rota depende de `INTERNAL_HEALTHCHECK_TOKEN`; sem token configurado, retorna 404.
 
+## DEC-021 - Auth foundation com Supabase SSR
+
+A Fase 1.9 usa `@supabase/ssr` e `@supabase/supabase-js` para a fundacao tecnica de autenticacao no Next.js App Router. `@supabase/auth-helpers` nao sera usado.
+
 ## PR-001 - Validacao Docker/Dokploy antes de producao real
 
 Docker/Dokploy deve ser validado obrigatoriamente antes de producao real em VPS real.

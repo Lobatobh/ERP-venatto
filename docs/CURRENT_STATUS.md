@@ -2,13 +2,13 @@
 
 ## Fase atual
 
-Fase 1.8 - Server-only Database Health Foundation.
+Fase 1.9 - Auth Foundation com Supabase SSR.
 
 ## Status
 
-Base server-only de saude do banco criada para validar a conexao com Supabase/PostgreSQL sem expor segredos, sem criar tela publica, sem auth e sem modulo de negocio.
+Fundacao tecnica de autenticacao criada com Supabase SSR no Next.js App Router, sem tela final de login, sem cadastro, sem dashboard e sem modulo de negocio.
 
-## Validacoes da Fase 1.8
+## Validacoes da Fase 1.9
 
 - `npx prisma validate`: executado com sucesso.
 - `npx prisma generate`: executado com sucesso.
@@ -19,10 +19,12 @@ Base server-only de saude do banco criada para validar a conexao com Supabase/Po
 
 ## Escopo concluido nesta fase
 
-- Criada funcao server-only `getDatabaseHealth`.
-- Criada rota interna `GET /api/internal/health/db` com resposta minima e sem dados sensiveis.
-- Rota exige token via `x-internal-health-token` em producao quando `INTERNAL_HEALTHCHECK_TOKEN` estiver definido; sem token configurado em producao, retorna 404.
-- Criado typecheck tecnico para importacao do healthcheck.
+- Instalados `@supabase/ssr` e `@supabase/supabase-js`.
+- Criados clientes Supabase para browser, server e proxy/middleware.
+- Criados helpers server-only para obter usuario atual e exigir usuario futuramente.
+- Criado proxy minimo para atualizacao de sessao/cookies.
+- Atualizado `.env.example` apenas com placeholders publicos.
+- Criado typecheck tecnico para imports de auth.
 - Mantida ausencia de seed, login/auth, telas, dashboard e modulos de negocio.
 - Mantido `prisma/schema.prisma` sem alteracao.
 - Nenhuma migration foi executada.
@@ -30,8 +32,9 @@ Base server-only de saude do banco criada para validar a conexao com Supabase/Po
 
 ## Escopo bloqueado
 
-- Criar auth/login.
-- Criar tela publica.
+- Criar tela final de login.
+- Criar cadastro.
+- Criar recuperacao de senha.
 - Criar dashboard.
 - Criar modulos de negocio.
 - Criar seed.

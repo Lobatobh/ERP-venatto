@@ -62,3 +62,8 @@
 - Revalidado `npm run lint`.
 - Revalidado `npm run typecheck`.
 - Revalidado `npm run build`.
+- Instalados `@supabase/ssr` e `@supabase/supabase-js`.
+- Criados clientes Supabase browser, server e proxy/middleware.
+- Criados helpers server-only de auth foundation.
+- Atualizado `.env.example` com placeholders publicos seguros.
+- Criado typecheck tecnico para auth foundation.
