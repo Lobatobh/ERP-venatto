@@ -2,20 +2,24 @@
 
 ## Fase atual
 
-Fase 2.2 - Fundacao de sessao/perfil SaaS sem RBAC completo.
+Fase 2.3A - Provisioning inicial controlado de perfil interno e tenant.
 
 ## Status
 
-Fase 2.2 implementada com camada server-only de sessao SaaS. O usuario autenticado pelo Supabase Auth agora pode ser combinado com o usuario interno do ERP via `User.email`, quando o perfil interno existir. Se nao houver perfil interno provisionado, a sessao retorna estado seguro de perfil pendente sem criar usuario, tenant ou membership automaticamente.
+Fase 2.3A concluida tecnicamente. A migration manual versionavel `add_supabase_auth_id` foi criada e aplicada via `prisma migrate deploy`, adicionando `User.supabaseAuthId` como vinculo estavel com Supabase Auth. O provisioning inicial e explicito via server action/botao protegido em `/app` e nao roda automaticamente ao acessar a rota.
 
-## Validacao da Fase 2.2
+## Validacao da Fase 2.3A
 
-- `prisma/schema.prisma`: inspecionado sem alteracao.
-- Vinculo interno disponivel no schema atual: `User.email`.
-- Campo dedicado para `auth.uid`: inexistente no schema atual.
-- Provisioning automatico: nao implementado.
-- RBAC completo: nao implementado.
-- `/app`: exibe e-mail autenticado, status de perfil interno e status de tenant ativo.
+- Migration `20260611162416_add_supabase_auth_id`: criada manualmente e aplicada com sucesso.
+- `User.supabaseAuthId`: adicionado como campo opcional e unico.
+- Sessao SaaS: busca usuario interno primeiro por `supabaseAuthId` e usa fallback por e-mail sem liberar tenant/membership se o usuario ainda nao estiver vinculado ao `authUser.id`.
+- Provisioning inicial: cria ou vincula `User`, reutiliza/cria tenant `Venatto`, reutiliza/cria role minima `Owner` e reutiliza/cria `Membership` em transacao Prisma.
+- Protecao: nao sobrescreve `supabaseAuthId` existente.
+- Protecao: bloqueia e-mail ja vinculado a outro `authUser.id`.
+- Protecao: bloqueia owner duplicado no tenant `venatto`.
+- Protecao: nao usa service role.
+- `/app`: exibe botao `Inicializar perfil interno da Venatto` quando o perfil interno esta pendente.
+- Teste manual do provisioning: pendente.
 - `npx prisma validate`: executado com sucesso.
 - `npx prisma generate`: executado com sucesso.
 - `npm run lint`: executado com sucesso.
@@ -29,9 +33,7 @@ Fase 2.2 implementada com camada server-only de sessao SaaS. O usuario autentica
 - Criar dashboard real.
 - Criar modulos de negocio.
 - Criar seed.
-- Criar usuario automaticamente no banco.
-- Criar tenant automaticamente no banco.
+- Criar novos usuarios automaticamente no tenant.
 - Criar RBAC completo.
-- Alterar schema Prisma sem fase autorizada.
 - Executar migration sem autorizacao explicita.
 - Executar `prisma db push`.

@@ -100,3 +100,12 @@ Esta pendencia nao bloqueia o desenvolvimento do MVP. Ela bloqueia apenas deploy
 ## DEC-023 - Sessao SaaS server-only
 
 A Fase 2.2 usa uma camada server-only para combinar Supabase Auth com dados internos do ERP via Prisma. No schema atual, o vinculo possivel e por `User.email`; campo dedicado para `auth.uid`, provisioning, RBAC completo e multi-tenant enforcement ficam para fases autorizadas.
+
+
+## DEC-024 - Vinculo estavel com Supabase Auth
+
+A Fase 2.3A adiciona `User.supabaseAuthId` como vinculo estavel entre Supabase Auth e usuario interno do ERP. O e-mail permanece unico, mas deixa de ser a identidade primaria de vinculacao.
+
+## DEC-025 - Provisioning inicial explicito e controlado
+
+O provisioning inicial de `User`, `Tenant`, `Role` e `Membership` e acionado apenas por server action/botao protegido em `/app`. Ele nao roda automaticamente ao acessar a rota, nao usa service role, usa transacao Prisma, nao sobrescreve `supabaseAuthId` existente, bloqueia e-mail vinculado a outro `authUser.id` e bloqueia owner duplicado no tenant `venatto`.

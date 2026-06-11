@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { signOutAction } from "@/server/auth/actions";
+import { provisionInitialSaasProfileAction } from "@/server/saas/provisioning";
 import { getSaasSession } from "@/server/saas/session";
 
 export const dynamic = "force-dynamic";
@@ -38,6 +39,13 @@ export default async function AppPage() {
               Tenant ativo: {session.activeTenant ? session.activeTenant.name : "pendente"}
             </p>
           </div>
+
+          {!session.isProvisioned ? (
+            <form action={provisionInitialSaasProfileAction}>
+              <Button type="submit">Inicializar perfil interno da Venatto</Button>
+            </form>
+          ) : null}
+
           <Separator />
           <form action={signOutAction}>
             <Button type="submit" variant="outline">

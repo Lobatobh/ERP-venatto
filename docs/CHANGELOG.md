@@ -83,3 +83,8 @@
 - Atualizada rota `/app` para exibir status tecnico minimo de perfil interno e tenant ativo.
 - Criado typecheck tecnico para a fundacao de sessao SaaS.
 - Registrada pendencia de provisioning e possivel campo dedicado para `auth.uid` em fase futura autorizada.
+- Concluida tecnicamente a Fase 2.3A com migration manual `add_supabase_auth_id` aplicada via `prisma migrate deploy`.
+- Adicionado `User.supabaseAuthId` como vinculo estavel com Supabase Auth.
+- Implementado provisioning inicial explicito por server action/botao protegido, sem service role e sem execucao automatica ao acessar `/app`.
+- Adicionadas protecoes contra sobrescrita de vinculo auth, e-mail vinculado a outro `authUser.id` e owner duplicado no tenant `venatto`.
+- Registrado teste manual de provisioning como pendente.
