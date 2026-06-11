@@ -86,6 +86,10 @@ A Fase 1.8 criou healthcheck server-only para conexao com banco usando Prisma e 
 
 A Fase 1.9 usa `@supabase/ssr` e `@supabase/supabase-js` para a fundacao tecnica de autenticacao no Next.js App Router. `@supabase/auth-helpers` nao sera usado.
 
+## DEC-022 - Fluxo minimo de auth antes de modulos
+
+A Fase 2.0 cria apenas o fluxo funcional minimo de login/logout e rota protegida `/app`. Cadastro publico, recuperacao de senha, RBAC, multi-tenant enforcement e dashboard real ficam para fases autorizadas.
+
 ## PR-001 - Validacao Docker/Dokploy antes de producao real
 
 Docker/Dokploy deve ser validado obrigatoriamente antes de producao real em VPS real.

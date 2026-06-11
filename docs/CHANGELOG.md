@@ -67,3 +67,9 @@
 - Criados helpers server-only de auth foundation.
 - Atualizado `.env.example` com placeholders publicos seguros.
 - Criado typecheck tecnico para auth foundation.
+- Criada tela minima de login em `/login`.
+- Criadas server actions de login e logout.
+- Criada rota protegida minima em `/app`.
+- Implementados redirecionamentos basicos de auth.
+- Atualizado proxy para protecao minima de `/app`.
+- Criado typecheck tecnico para actions de auth.

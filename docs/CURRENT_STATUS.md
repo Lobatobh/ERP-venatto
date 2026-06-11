@@ -2,13 +2,13 @@
 
 ## Fase atual
 
-Fase 1.9 - Auth Foundation com Supabase SSR.
+Fase 2.0 - Auth UI minima e fluxo login/logout.
 
 ## Status
 
-Fundacao tecnica de autenticacao criada com Supabase SSR no Next.js App Router, sem tela final de login, sem cadastro, sem dashboard e sem modulo de negocio.
+Fluxo minimo de autenticacao criado com Supabase Auth SSR: login, logout, rota protegida minima e redirecionamentos basicos, sem cadastro, sem recuperacao de senha, sem dashboard real e sem modulo de negocio.
 
-## Validacoes da Fase 1.9
+## Validacoes da Fase 2.0
 
 - `npx prisma validate`: executado com sucesso.
 - `npx prisma generate`: executado com sucesso.
@@ -19,26 +19,24 @@ Fundacao tecnica de autenticacao criada com Supabase SSR no Next.js App Router, 
 
 ## Escopo concluido nesta fase
 
-- Instalados `@supabase/ssr` e `@supabase/supabase-js`.
-- Criados clientes Supabase para browser, server e proxy/middleware.
-- Criados helpers server-only para obter usuario atual e exigir usuario futuramente.
-- Criado proxy minimo para atualizacao de sessao/cookies.
-- Atualizado `.env.example` apenas com placeholders publicos.
-- Criado typecheck tecnico para imports de auth.
-- Mantida ausencia de seed, login/auth, telas, dashboard e modulos de negocio.
+- Criada tela minima de login em `/login`.
+- Criadas server actions de login e logout.
+- Criada rota protegida minima em `/app`.
+- Implementados redirecionamentos basicos para usuario autenticado/nao autenticado.
+- Atualizado proxy para protecao minima de `/app`.
+- Criado typecheck tecnico para actions de auth.
+- Mantida ausencia de cadastro publico, recuperacao de senha, dashboard real e modulos de negocio.
 - Mantido `prisma/schema.prisma` sem alteracao.
 - Nenhuma migration foi executada.
 - `prisma db push` nao foi usado.
 
 ## Escopo bloqueado
 
-- Criar tela final de login.
-- Criar cadastro.
+- Criar cadastro publico.
 - Criar recuperacao de senha.
-- Criar dashboard.
+- Criar dashboard real.
 - Criar modulos de negocio.
 - Criar seed.
 - Alterar schema Prisma sem fase autorizada.
 - Executar migration sem autorizacao explicita.
 - Executar `prisma db push`.
-- Fazer push sem autorizacao explicita.
