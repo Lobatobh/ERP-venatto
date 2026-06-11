@@ -95,3 +95,8 @@ A Fase 2.0 cria apenas o fluxo funcional minimo de login/logout e rota protegida
 Docker/Dokploy deve ser validado obrigatoriamente antes de producao real em VPS real.
 
 Esta pendencia nao bloqueia o desenvolvimento do MVP. Ela bloqueia apenas deploy e producao real.
+
+
+## DEC-023 - Sessao SaaS server-only
+
+A Fase 2.2 usa uma camada server-only para combinar Supabase Auth com dados internos do ERP via Prisma. No schema atual, o vinculo possivel e por `User.email`; campo dedicado para `auth.uid`, provisioning, RBAC completo e multi-tenant enforcement ficam para fases autorizadas.

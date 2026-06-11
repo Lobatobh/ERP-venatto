@@ -2,23 +2,25 @@
 
 ## Fase atual
 
-Fase 2.1A - Configurar variaveis publicas locais e validar login real.
+Fase 2.2 - Fundacao de sessao/perfil SaaS sem RBAC completo.
 
 ## Status
 
-Fase 2.1A concluida. As variaveis publicas locais do Supabase Auth foram detectadas no `.env` sem exposicao de valores, o usuario admin inicial foi criado manualmente no Supabase Studio e o fluxo real de login/logout foi validado manualmente.
+Fase 2.2 implementada com camada server-only de sessao SaaS. O usuario autenticado pelo Supabase Auth agora pode ser combinado com o usuario interno do ERP via `User.email`, quando o perfil interno existir. Se nao houver perfil interno provisionado, a sessao retorna estado seguro de perfil pendente sem criar usuario, tenant ou membership automaticamente.
 
-## Validacao da Fase 2.1A
+## Validacao da Fase 2.2
 
-- `.env`: existe localmente e nao e versionado.
-- `NEXT_PUBLIC_SUPABASE_URL`: presente no `.env` local, sem valor registrado.
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`: presente no `.env` local, sem valor registrado.
-- Usuario admin inicial: criado manualmente no Supabase Studio em Authentication > Users.
-- `/login`: carregou corretamente.
-- `/app` autenticado: carregou corretamente.
-- E-mail do usuario: exibido corretamente.
-- Logout: validado manualmente.
-- Protecao pos-logout de `/app`: validada manualmente.
+- `prisma/schema.prisma`: inspecionado sem alteracao.
+- Vinculo interno disponivel no schema atual: `User.email`.
+- Campo dedicado para `auth.uid`: inexistente no schema atual.
+- Provisioning automatico: nao implementado.
+- RBAC completo: nao implementado.
+- `/app`: exibe e-mail autenticado, status de perfil interno e status de tenant ativo.
+- `npx prisma validate`: executado com sucesso.
+- `npx prisma generate`: executado com sucesso.
+- `npm run lint`: executado com sucesso.
+- `npm run typecheck`: executado com sucesso.
+- `npm run build`: executado com sucesso.
 
 ## Escopo bloqueado
 
@@ -27,7 +29,9 @@ Fase 2.1A concluida. As variaveis publicas locais do Supabase Auth foram detecta
 - Criar dashboard real.
 - Criar modulos de negocio.
 - Criar seed.
-- Criar RBAC.
+- Criar usuario automaticamente no banco.
+- Criar tenant automaticamente no banco.
+- Criar RBAC completo.
 - Alterar schema Prisma sem fase autorizada.
 - Executar migration sem autorizacao explicita.
 - Executar `prisma db push`.

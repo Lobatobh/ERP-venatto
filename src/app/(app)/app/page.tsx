@@ -8,15 +8,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { signOutAction } from "@/server/auth/actions";
-import { getCurrentUser } from "@/server/auth/session";
+import { getSaasSession } from "@/server/saas/session";
 
 export const dynamic = "force-dynamic";
 
 export default async function AppPage() {
-  const { user } = await getCurrentUser();
+  const session = await getSaasSession();
 
-  if (!user) {
+  if (!session.authUser) {
     redirect("/login");
   }
 
@@ -28,7 +29,16 @@ export default async function AppPage() {
           <CardDescription>Autenticacao minima validada.</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
-          <p className="text-sm text-muted-foreground">Usuario: {user.email}</p>
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <p>Usuario: {session.authUser.email}</p>
+            <p>
+              Perfil interno: {session.isProvisioned ? "provisionado" : "pendente"}
+            </p>
+            <p>
+              Tenant ativo: {session.activeTenant ? session.activeTenant.name : "pendente"}
+            </p>
+          </div>
+          <Separator />
           <form action={signOutAction}>
             <Button type="submit" variant="outline">
               Sair

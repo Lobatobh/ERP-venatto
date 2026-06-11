@@ -79,3 +79,7 @@
 - Concluida Fase 2.1A com variaveis publicas Supabase detectadas localmente sem exposicao de valores.
 - Validado login real com usuario admin criado manualmente no Supabase Studio.
 - Validado carregamento autenticado de `/app`, exibicao de e-mail, logout e protecao pos-logout.
+- Criada camada server-only de sessao SaaS combinando Supabase Auth com usuario interno via Prisma quando provisionado.
+- Atualizada rota `/app` para exibir status tecnico minimo de perfil interno e tenant ativo.
+- Criado typecheck tecnico para a fundacao de sessao SaaS.
+- Registrada pendencia de provisioning e possivel campo dedicado para `auth.uid` em fase futura autorizada.
