@@ -73,3 +73,7 @@
 - Implementados redirecionamentos basicos de auth.
 - Atualizado proxy para protecao minima de `/app`.
 - Criado typecheck tecnico para actions de auth.
+- Iniciada Fase 2.1 com diagnostico seguro de variaveis publicas Supabase para validacao real de login.
+- Registrado checklist manual para criacao do usuario admin inicial e teste de login/logout.
+- Identificada pendencia de configurar `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY` no `.env` local seguro.
+

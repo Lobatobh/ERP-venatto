@@ -2,33 +2,35 @@
 
 ## Fase atual
 
-Fase 2.0 - Auth UI minima e fluxo login/logout.
+Fase 2.1 - Validacao real de login + usuario admin inicial controlado.
 
 ## Status
 
-Fluxo minimo de autenticacao criado com Supabase Auth SSR: login, logout, rota protegida minima e redirecionamentos basicos, sem cadastro, sem recuperacao de senha, sem dashboard real e sem modulo de negocio.
+Fase 2.1 bloqueada por variaveis publicas locais ausentes. O fluxo minimo de autenticacao esta pronto para validacao manual com usuario real, mas o `.env` local ainda nao possui `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
 
-## Validacoes da Fase 2.0
+## Validacao da Fase 2.1
 
-- `npx prisma validate`: executado com sucesso.
-- `npx prisma generate`: executado com sucesso.
-- `npm run lint`: executado com sucesso.
-- `npm run typecheck`: executado com sucesso.
-- `npm run build`: executado com sucesso.
-- `git status --short`: executado apos validacoes.
+- `git status --short`: limpo no inicio da fase.
+- Branch atual: `main`.
+- Remote `origin`: configurado.
+- `.env`: existe localmente e nao e versionado.
+- `NEXT_PUBLIC_SUPABASE_URL`: ausente no `.env` local.
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`: ausente no `.env` local.
+- Validacao manual de login/logout: bloqueada ate configurar as variaveis publicas em ambiente local seguro.
 
-## Escopo concluido nesta fase
+## Checklist manual da Fase 2.1
 
-- Criada tela minima de login em `/login`.
-- Criadas server actions de login e logout.
-- Criada rota protegida minima em `/app`.
-- Implementados redirecionamentos basicos para usuario autenticado/nao autenticado.
-- Atualizado proxy para protecao minima de `/app`.
-- Criado typecheck tecnico para actions de auth.
-- Mantida ausencia de cadastro publico, recuperacao de senha, dashboard real e modulos de negocio.
-- Mantido `prisma/schema.prisma` sem alteracao.
-- Nenhuma migration foi executada.
-- `prisma db push` nao foi usado.
+- Criar usuario admin manualmente no Supabase Studio em Authentication > Users.
+- Usar e-mail e senha definidos pelo usuario, sem registrar credenciais no codigo.
+- Confirmar e-mail manualmente se o Supabase exigir.
+- Abrir `/login`.
+- Acessar `/app` deslogado e confirmar redirect para `/login`.
+- Logar com usuario real.
+- Confirmar redirect para `/app`.
+- Confirmar exibicao do e-mail do usuario.
+- Clicar em sair.
+- Confirmar redirect para `/login`.
+- Tentar `/app` novamente e confirmar protecao.
 
 ## Escopo bloqueado
 
