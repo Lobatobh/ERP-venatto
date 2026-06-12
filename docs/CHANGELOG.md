@@ -105,3 +105,7 @@
 - Criados componentes simples de app shell, header, status da conta, usuarios do tenant e proximas etapas.
 - Preservadas regras de login, logout, provisioning e onboarding interno sem criar dashboard real ou modulos de negocio.
 - Registrado teste manual da base visual como pendente.
+- Concluida tecnicamente a Sprint 2 com estrutura de navegacao real do VENATTO ERP.
+- Criado layout autenticado com sidebar, topbar e area principal.
+- Criadas rotas placeholder para clientes, propostas, projetos, ambientes, financeiro, producao, usuarios e configuracoes.
+- Preservadas as funcionalidades de auth, provisioning, onboarding e gestao simples de usuarios sem criar modulos de negocio completos.

@@ -119,3 +119,8 @@ A Fase 2.4A permite que apenas owner ativo do tenant `venatto` prepare usuarios 
 ## DEC-027 - Base visual autenticada antes do dashboard real
 
 A Fase 2.5A cria uma base visual minima para `/app` apos autenticacao, com estrutura de SaaS e cards informativos. Essa base prepara a evolucao do MVP, mas nao introduz dashboard real, metricas, graficos ou modulos de negocio.
+
+
+## DEC-028 - Navegacao ERP antes dos modulos reais
+
+A Sprint 2 cria a estrutura navegacional do VENATTO ERP antes de implementar modulos reais. As rotas de clientes, propostas, projetos, ambientes, financeiro, producao, usuarios e configuracoes sao placeholders estruturais para orientar a evolucao do MVP sem introduzir regras de negocio prematuras.

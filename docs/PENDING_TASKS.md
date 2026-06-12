@@ -2,7 +2,8 @@
 
 ## Pendencias reais
 
-- Testar manualmente a base visual pos-auth em `/app` como owner e member.
+- Testar manualmente a navegacao ERP como owner e member.
+- Definir o primeiro modulo real do MVP, recomendado: Clientes/Leads da Venatto.
 - Definir politica futura para convites/criacao manual de usuarios no Supabase Auth.
 - Implementar RBAC completo em fase futura autorizada.
 - Criar dashboard real em fase futura autorizada.

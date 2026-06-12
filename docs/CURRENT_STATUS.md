@@ -2,28 +2,28 @@
 
 ## Fase atual
 
-Fase 2.5A - Base visual minima pos-auth para `/app`.
+Sprint 2 - Estrutura de navegacao real do VENATTO ERP.
 
 ## Status
 
-Fase 2.5A concluida tecnicamente. A rota `/app` agora possui uma base visual autenticada com estrutura de SaaS, incluindo cabecalho simples, identificacao do tenant ativo, usuario logado, status da conta, usuarios do tenant e proximas etapas informativas. Ainda nao e dashboard real e nao inclui modulos de negocio.
+Sprint 2 concluida tecnicamente. A area autenticada agora possui layout ERP com sidebar, topbar, area principal e navegacao base para os modulos futuros. As paginas criadas sao placeholders estruturais, sem CRUD real, sem regras de negocio completas e sem novas chamadas de banco alem das ja existentes para sessao/acesso.
 
-## Validacao da Fase 2.5A
+## Validacao da Sprint 2
 
-- `/app`: mantida como rota principal protegida.
-- Nome do sistema: `VENATTO ERP` exibido no cabecalho.
-- Tenant ativo: exibido na base visual.
-- Usuario logado: exibido no cabecalho e status da conta.
-- Perfil interno: exibido como `provisionado` ou `pendente`.
-- Papel do usuario: exibido quando disponivel.
-- Usuarios do tenant: owner ve formulario e lista; member nao ve formulario.
-- Proximas etapas: cards informativos estaticos, sem metricas reais.
-- Login, logout, provisioning e onboarding: regras funcionais preservadas.
-- Schema Prisma: sem alteracao nesta fase.
-- Migration: nenhuma nova migration nesta fase.
+- `/app`: mantida como visao geral protegida.
+- Layout autenticado: sidebar, topbar e area principal criados.
+- Tenant ativo: exibido na topbar.
+- Usuario logado: exibido na topbar.
+- Logout: preservado.
+- Provisioning e onboarding: preservados.
+- Navegacao criada para clientes, propostas, projetos, ambientes, financeiro, producao, usuarios e configuracoes.
+- Paginas placeholder: criadas sem CRUD real e sem formularios de negocio.
+- Gestao simples de usuarios: preservada na visao geral para owner.
+- Member: continua sem formulario de adicionar usuario.
+- Schema Prisma: sem alteracao.
+- Migration: nenhuma nova migration.
 - Dependencias: nenhuma nova dependencia instalada.
-- Dashboard real e modulos de negocio: nao criados.
-- Teste manual da base visual: pendente.
+- RBAC completo e modulos de negocio: pendentes.
 - `npx prisma validate`: executado com sucesso.
 - `npx prisma generate`: executado com sucesso.
 - `npm run lint`: executado com sucesso.
@@ -32,11 +32,10 @@ Fase 2.5A concluida tecnicamente. A rota `/app` agora possui uma base visual aut
 
 ## Escopo bloqueado
 
-- Criar dashboard real.
-- Criar metricas reais.
-- Criar graficos.
-- Criar modulos de negocio.
-- Criar CRM, clientes, vendas, estoque, producao ou financeiro.
+- Criar CRUD real.
+- Criar dashboard real com metricas reais.
+- Criar modulos de negocio completos.
+- Criar CRM, clientes, vendas, estoque, producao ou financeiro funcionais.
 - Criar conta Supabase Auth automaticamente.
 - Usar service role.
 - Criar seed.

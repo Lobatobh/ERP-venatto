@@ -1,6 +1,10 @@
 import { AccountStatusCard } from "@/components/app/account-status-card";
 import { AppHeader } from "@/components/app/app-header";
 import { AppShell } from "@/components/app/app-shell";
+import { AppSidebar } from "@/components/app/app-sidebar";
+import { AppTopbar } from "@/components/app/app-topbar";
+import { ModulePlaceholder } from "@/components/app/module-placeholder";
+import { appNavigationItems } from "@/components/app/navigation";
 import { NextStepsCard } from "@/components/app/next-steps-card";
 import { TenantUsersCard } from "@/components/app/tenant-users-card";
 import {
@@ -30,6 +34,10 @@ void tenantUsersLoader;
 void addUserAction;
 void AppShell;
 void AppHeader;
+void AppSidebar;
+void AppTopbar;
 void AccountStatusCard;
 void TenantUsersCard;
 void NextStepsCard;
+void ModulePlaceholder;
+void appNavigationItems;
