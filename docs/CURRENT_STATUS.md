@@ -2,21 +2,25 @@
 
 ## Fase atual
 
-Fase 2.3B - Teste manual do provisioning inicial e validacao pos-provisioning.
+Fase 2.4A - Politica controlada para adicionar usuarios internos ao tenant Venatto.
 
 ## Status
 
-Fase 2.3B validada manualmente. O login real passou, o provisioning inicial foi executado com sucesso pelo botao protegido em `/app`, o tenant ativo `Venatto` foi validado e o logout/login pos-provisioning manteve o perfil interno provisionado.
+Fase 2.4A concluida tecnicamente. O owner ativo do tenant `venatto` pode preparar usuarios internos por e-mail dentro do ERP, sem criar conta Supabase Auth, sem service role e sem RBAC completo. O novo usuario podera vincular `supabaseAuthId` no primeiro login/provisioning.
 
-## Validacao da Fase 2.3B
+## Validacao da Fase 2.4A
 
-- Login real: validado manualmente.
-- `/app`: abriu corretamente autenticado.
-- Provisioning inicial: validado manualmente.
-- Perfil interno: `provisionado` apos provisioning.
-- Tenant ativo: `Venatto` validado.
-- Botao `Inicializar perfil interno da Venatto`: nao aparece mais apos provisioning.
-- Logout/login pos-provisioning: validado manualmente.
+- Owner do tenant `venatto`: pode adicionar usuario interno por e-mail.
+- Fluxo: nao cria conta Supabase Auth.
+- Fluxo: prepara apenas `User` interno e `Membership` no ERP.
+- Role minima `member`: criada/reutilizada para novos usuarios.
+- Owner existente: nao e removido nem rebaixado.
+- Provisioning: usuario pre-cadastrado com membership ativa pode vincular `supabaseAuthId` no primeiro login/provisioning.
+- `/app`: exibe secao simples `Usuarios do tenant` para owner, com formulario e lista.
+- Schema Prisma: sem alteracao nesta fase.
+- Migration: nenhuma nova migration nesta fase.
+- RBAC completo: pendente.
+- Teste manual do onboarding de novo usuario: pendente.
 - `npx prisma validate`: executado com sucesso.
 - `npx prisma generate`: executado com sucesso.
 - `npm run lint`: executado com sucesso.
@@ -25,12 +29,14 @@ Fase 2.3B validada manualmente. O login real passou, o provisioning inicial foi 
 
 ## Escopo bloqueado
 
+- Criar conta Supabase Auth automaticamente.
+- Usar service role.
 - Criar cadastro publico.
 - Criar recuperacao de senha.
 - Criar dashboard real.
 - Criar modulos de negocio.
 - Criar seed.
-- Criar novos usuarios automaticamente no tenant.
-- Criar RBAC completo.
+- Implementar RBAC completo.
+- Alterar schema Prisma sem fase autorizada.
 - Executar migration sem autorizacao explicita.
 - Executar `prisma db push`.

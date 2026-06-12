@@ -2,7 +2,8 @@
 
 ## Pendencias reais
 
-- Definir politica futura para adicionar novos usuarios ao tenant `venatto`.
+- Testar manualmente o onboarding de novo usuario interno no tenant `venatto`.
+- Definir politica futura para convites/criacao manual de usuarios no Supabase Auth.
 - Implementar RBAC completo em fase futura autorizada.
 - Criar dashboard real em fase futura autorizada.
 - Configurar deploy/staging.

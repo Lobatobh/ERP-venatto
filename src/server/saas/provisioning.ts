@@ -94,6 +94,16 @@ export async function provisionInitialSaasProfileAction() {
       select: { id: true },
     });
 
+    const existingMembership = await tx.membership.findUnique({
+      where: {
+        tenantId_userId: {
+          tenantId: tenant.id,
+          userId: appUser.id,
+        },
+      },
+      select: { id: true, isActive: true },
+    });
+
     const activeOwnerMembership = await tx.membership.findFirst({
       where: {
         tenantId: tenant.id,
@@ -104,7 +114,11 @@ export async function provisionInitialSaasProfileAction() {
     });
 
     if (activeOwnerMembership && activeOwnerMembership.userId !== appUser.id) {
-      throw new ProvisioningBlockedError("Tenant already has an active owner.");
+      if (!existingMembership?.isActive) {
+        throw new ProvisioningBlockedError("Tenant already has an active owner.");
+      }
+
+      return;
     }
 
     await tx.membership.upsert({

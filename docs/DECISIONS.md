@@ -109,3 +109,8 @@ A Fase 2.3A adiciona `User.supabaseAuthId` como vinculo estavel entre Supabase A
 ## DEC-025 - Provisioning inicial explicito e controlado
 
 O provisioning inicial de `User`, `Tenant`, `Role` e `Membership` e acionado apenas por server action/botao protegido em `/app`. Ele nao roda automaticamente ao acessar a rota, nao usa service role, usa transacao Prisma, nao sobrescreve `supabaseAuthId` existente, bloqueia e-mail vinculado a outro `authUser.id` e bloqueia owner duplicado no tenant `venatto`.
+
+
+## DEC-026 - Onboarding interno controlado
+
+A Fase 2.4A permite que apenas owner ativo do tenant `venatto` prepare usuarios internos por e-mail. O fluxo nao cria conta Supabase Auth, nao usa service role, nao concede owner para novos usuarios, cria/reutiliza role minima `member` e preserva owner existente. O novo usuario vincula `supabaseAuthId` no primeiro login/provisioning.

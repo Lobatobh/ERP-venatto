@@ -92,3 +92,8 @@
 - Confirmado que o botao `Inicializar perfil interno da Venatto` criou/vinculou o perfil interno e nao aparece mais apos provisioning.
 - Validado logout/login pos-provisioning mantendo perfil interno provisionado e tenant ativo `Venatto`.
 - Removida pendencia de testar manualmente o botao de provisioning inicial.
+- Concluida tecnicamente a Fase 2.4A com onboarding interno controlado para o tenant `venatto`.
+- Adicionada action server-only para owner preparar usuario interno por e-mail sem criar conta Supabase Auth.
+- Criada/reutilizada role minima `member`, preservando owner existente e mantendo RBAC completo pendente.
+- Atualizada `/app` com secao simples `Usuarios do tenant`, formulario para owner e lista de usuarios internos.
+- Registrado teste manual do onboarding de novo usuario como pendente.
