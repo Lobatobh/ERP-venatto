@@ -1,3 +1,8 @@
+import { AccountStatusCard } from "@/components/app/account-status-card";
+import { AppHeader } from "@/components/app/app-header";
+import { AppShell } from "@/components/app/app-shell";
+import { NextStepsCard } from "@/components/app/next-steps-card";
+import { TenantUsersCard } from "@/components/app/tenant-users-card";
 import {
   getCurrentUserTenantAccess,
   listCurrentTenantUsers,
@@ -23,3 +28,8 @@ void tenantAccessLoader;
 void ownerAccessLoader;
 void tenantUsersLoader;
 void addUserAction;
+void AppShell;
+void AppHeader;
+void AccountStatusCard;
+void TenantUsersCard;
+void NextStepsCard;

@@ -114,3 +114,8 @@ O provisioning inicial de `User`, `Tenant`, `Role` e `Membership` e acionado ape
 ## DEC-026 - Onboarding interno controlado
 
 A Fase 2.4A permite que apenas owner ativo do tenant `venatto` prepare usuarios internos por e-mail. O fluxo nao cria conta Supabase Auth, nao usa service role, nao concede owner para novos usuarios, cria/reutiliza role minima `member` e preserva owner existente. O novo usuario vincula `supabaseAuthId` no primeiro login/provisioning.
+
+
+## DEC-027 - Base visual autenticada antes do dashboard real
+
+A Fase 2.5A cria uma base visual minima para `/app` apos autenticacao, com estrutura de SaaS e cards informativos. Essa base prepara a evolucao do MVP, mas nao introduz dashboard real, metricas, graficos ou modulos de negocio.

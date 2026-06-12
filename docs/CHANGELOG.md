@@ -101,3 +101,7 @@
 - Confirmado que o novo usuario apareceu como `member ativo`, logou via Supabase Auth e vinculou `supabaseAuthId` no primeiro login/provisioning.
 - Confirmado que o novo usuario ficou provisionado no tenant `Venatto` sem formulario de owner e que o owner original continuou preservado.
 - Removida pendencia de testar manualmente o onboarding de novo usuario interno.
+- Concluida tecnicamente a Fase 2.5A com base visual minima pos-auth para `/app`.
+- Criados componentes simples de app shell, header, status da conta, usuarios do tenant e proximas etapas.
+- Preservadas regras de login, logout, provisioning e onboarding interno sem criar dashboard real ou modulos de negocio.
+- Registrado teste manual da base visual como pendente.
