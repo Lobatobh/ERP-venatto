@@ -2,25 +2,23 @@
 
 ## Fase atual
 
-Fase 2.4A - Politica controlada para adicionar usuarios internos ao tenant Venatto.
+Fase 2.4B - Teste manual do onboarding de novo usuario interno no tenant Venatto.
 
 ## Status
 
-Fase 2.4A concluida tecnicamente. O owner ativo do tenant `venatto` pode preparar usuarios internos por e-mail dentro do ERP, sem criar conta Supabase Auth, sem service role e sem RBAC completo. O novo usuario podera vincular `supabaseAuthId` no primeiro login/provisioning.
+Fase 2.4B validada manualmente. O owner adicionou um novo usuario interno ao tenant `venatto`, o novo usuario apareceu como `member` ativo, conseguiu logar apos existir no Supabase Auth, vinculou `supabaseAuthId` no primeiro login/provisioning e permaneceu provisionado no tenant `Venatto` sem acesso de owner.
 
-## Validacao da Fase 2.4A
+## Validacao da Fase 2.4B
 
-- Owner do tenant `venatto`: pode adicionar usuario interno por e-mail.
-- Fluxo: nao cria conta Supabase Auth.
-- Fluxo: prepara apenas `User` interno e `Membership` no ERP.
-- Role minima `member`: criada/reutilizada para novos usuarios.
-- Owner existente: nao e removido nem rebaixado.
-- Provisioning: usuario pre-cadastrado com membership ativa pode vincular `supabaseAuthId` no primeiro login/provisioning.
-- `/app`: exibe secao simples `Usuarios do tenant` para owner, com formulario e lista.
-- Schema Prisma: sem alteracao nesta fase.
-- Migration: nenhuma nova migration nesta fase.
-- RBAC completo: pendente.
-- Teste manual do onboarding de novo usuario: pendente.
+- Owner validado: acessou `/app` e visualizou `Usuarios do tenant`.
+- Novo usuario interno: adicionado pelo owner por nome/e-mail.
+- Novo usuario na lista: exibido como `member` e `ativo`.
+- Novo usuario Auth: login validado apos existir no Supabase Auth.
+- Vinculo `supabaseAuthId`: validado no primeiro login/provisioning.
+- Perfil interno do novo usuario: `provisionado`.
+- Tenant ativo do novo usuario: `Venatto`.
+- Restricao de nao-owner: novo usuario nao viu formulario de adicionar usuario.
+- Owner preservado: owner logou novamente e confirmou novo usuario como `member ativo`.
 - `npx prisma validate`: executado com sucesso.
 - `npx prisma generate`: executado com sucesso.
 - `npm run lint`: executado com sucesso.

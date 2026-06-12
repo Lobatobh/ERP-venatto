@@ -97,3 +97,7 @@
 - Criada/reutilizada role minima `member`, preservando owner existente e mantendo RBAC completo pendente.
 - Atualizada `/app` com secao simples `Usuarios do tenant`, formulario para owner e lista de usuarios internos.
 - Registrado teste manual do onboarding de novo usuario como pendente.
+- Validada manualmente a Fase 2.4B com owner adicionando novo usuario interno ao tenant `venatto`.
+- Confirmado que o novo usuario apareceu como `member ativo`, logou via Supabase Auth e vinculou `supabaseAuthId` no primeiro login/provisioning.
+- Confirmado que o novo usuario ficou provisionado no tenant `Venatto` sem formulario de owner e que o owner original continuou preservado.
+- Removida pendencia de testar manualmente o onboarding de novo usuario interno.
