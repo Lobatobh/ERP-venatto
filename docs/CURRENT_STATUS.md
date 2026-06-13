@@ -2,28 +2,25 @@
 
 ## Fase atual
 
-Sprint 2 - Estrutura de navegacao real do VENATTO ERP.
+Sprint 3A - Modulo Clientes/Leads V1.
 
 ## Status
 
-Sprint 2 concluida tecnicamente. A area autenticada agora possui layout ERP com sidebar, topbar, area principal e navegacao base para os modulos futuros. As paginas criadas sao placeholders estruturais, sem CRUD real, sem regras de negocio completas e sem novas chamadas de banco alem das ja existentes para sessao/acesso.
+Sprint 3A concluida tecnicamente. O modulo Clientes/Leads V1 foi criado como primeiro modulo real do VENATTO ERP, com schema versionado, migration aplicada, pagina real em `/app/clientes`, resumo por status, formulario de criacao para owner e listagem isolada por tenant.
 
-## Validacao da Sprint 2
+## Validacao da Sprint 3A
 
-- `/app`: mantida como visao geral protegida.
-- Layout autenticado: sidebar, topbar e area principal criados.
-- Tenant ativo: exibido na topbar.
-- Usuario logado: exibido na topbar.
-- Logout: preservado.
-- Provisioning e onboarding: preservados.
-- Navegacao criada para clientes, propostas, projetos, ambientes, financeiro, producao, usuarios e configuracoes.
-- Paginas placeholder: criadas sem CRUD real e sem formularios de negocio.
-- Gestao simples de usuarios: preservada na visao geral para owner.
-- Member: continua sem formulario de adicionar usuario.
-- Schema Prisma: sem alteracao.
-- Migration: nenhuma nova migration.
-- Dependencias: nenhuma nova dependencia instalada.
-- RBAC completo e modulos de negocio: pendentes.
+- Migration `add_customers_module_v1`: criada e aplicada com Prisma Migrate.
+- Model `Customer`: criado com `CustomerStatus` em UPPERCASE e tabela real `customers`.
+- Relacao `Tenant.customers`: adicionada ao schema.
+- Multi-tenant: queries e actions usam tenant ativo da sessao SaaS; `tenantId` nao vem do client.
+- Owner: pode criar clientes/leads.
+- Member: pode visualizar clientes/leads e nao recebe formulario de criacao.
+- `/app/clientes`: deixou de ser placeholder e passou a exibir modulo V1 real.
+- Resumo: total de registros, leads, clientes e propostas em andamento.
+- Formulario: nome obrigatorio, status validado por enum e campos opcionais normalizados.
+- Lista: exibe nome, contato, status e origem com estado vazio.
+- CRM completo, propostas, projetos, financeiro, producao e RBAC completo: pendentes.
 - `npx prisma validate`: executado com sucesso.
 - `npx prisma generate`: executado com sucesso.
 - `npm run lint`: executado com sucesso.
@@ -32,13 +29,15 @@ Sprint 2 concluida tecnicamente. A area autenticada agora possui layout ERP com 
 
 ## Escopo bloqueado
 
-- Criar CRUD real.
+- Criar CRM completo.
+- Criar propostas reais.
+- Criar projetos reais.
+- Criar financeiro real.
+- Criar producao real.
 - Criar dashboard real com metricas reais.
-- Criar modulos de negocio completos.
-- Criar CRM, clientes, vendas, estoque, producao ou financeiro funcionais.
+- Criar seed.
 - Criar conta Supabase Auth automaticamente.
 - Usar service role.
-- Criar seed.
 - Implementar RBAC completo.
 - Alterar schema Prisma sem fase autorizada.
 - Executar migration sem autorizacao explicita.

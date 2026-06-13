@@ -124,3 +124,7 @@ A Fase 2.5A cria uma base visual minima para `/app` apos autenticacao, com estru
 ## DEC-028 - Navegacao ERP antes dos modulos reais
 
 A Sprint 2 cria a estrutura navegacional do VENATTO ERP antes de implementar modulos reais. As rotas de clientes, propostas, projetos, ambientes, financeiro, producao, usuarios e configuracoes sao placeholders estruturais para orientar a evolucao do MVP sem introduzir regras de negocio prematuras.
+
+## DEC-029 - Clientes/Leads como primeiro modulo real
+
+A Sprint 3A introduz Clientes/Leads V1 como primeiro modulo real do ERP. O modelo Customer pertence obrigatoriamente ao tenant ativo, usa enum CustomerStatus em UPPERCASE, permite criacao apenas por owner e visualizacao por member. CRM completo, propostas reais e RBAC completo continuam fora do escopo desta sprint.

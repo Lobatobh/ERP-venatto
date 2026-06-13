@@ -109,3 +109,9 @@
 - Criado layout autenticado com sidebar, topbar e area principal.
 - Criadas rotas placeholder para clientes, propostas, projetos, ambientes, financeiro, producao, usuarios e configuracoes.
 - Preservadas as funcionalidades de auth, provisioning, onboarding e gestao simples de usuarios sem criar modulos de negocio completos.
+- Concluida tecnicamente a Sprint 3A com modulo Clientes/Leads V1.
+- Criada e aplicada migration versionavel `add_customers_module_v1` com model `Customer` e enum `CustomerStatus`.
+- Atualizada `/app/clientes` para pagina real com resumo, formulario de criacao para owner e lista de clientes/leads por tenant.
+- Implementadas queries e server action server-side com isolamento por tenant ativo e sem aceitar `tenantId` do client.
+- Mantida regra simples: owner cria, member visualiza, RBAC completo permanece pendente.
+- Registrado teste manual do modulo Clientes/Leads V1 como pendente.

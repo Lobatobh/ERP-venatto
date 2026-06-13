@@ -2,8 +2,10 @@
 
 ## Pendencias reais
 
-- Testar manualmente a navegacao ERP como owner e member.
-- Definir o primeiro modulo real do MVP, recomendado: Clientes/Leads da Venatto.
+- Testar manualmente o modulo Clientes/Leads V1 como owner e member.
+- Definir refinamentos do modulo Clientes/Leads V1 apos teste manual.
+- Planejar proxima evolucao comercial sem implementar CRM completo prematuramente.
+
 - Definir politica futura para convites/criacao manual de usuarios no Supabase Auth.
 - Implementar RBAC completo em fase futura autorizada.
 - Criar dashboard real em fase futura autorizada.
