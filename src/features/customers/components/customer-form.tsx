@@ -29,7 +29,7 @@ export function CustomerForm() {
       <CardHeader>
         <CardTitle>Novo cliente ou lead</CardTitle>
         <CardDescription>
-          Cadastre um contato inicial no tenant ativo. O tenant e calculado no servidor.
+          Cadastre um contato inicial no tenant ativo. O tenant é calculado no servidor.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -75,7 +75,7 @@ export function CustomerForm() {
             </label>
           </div>
           <label className="grid gap-1.5 text-sm font-medium">
-            Observacoes
+            Observações
             <textarea className={textareaClassName} name="notes" />
           </label>
           <div>

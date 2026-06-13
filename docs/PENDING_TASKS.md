@@ -2,8 +2,9 @@
 
 ## Pendencias reais
 
-- Testar manualmente o modulo Clientes/Leads V1 como owner e member.
-- Definir refinamentos do modulo Clientes/Leads V1 apos teste manual.
+- Sprint 4A recomendada: Propostas V1 conectada a Cliente/Lead.
+- Definir escopo minimo de Propostas V1 antes de alterar schema ou criar migration.
+
 - Planejar proxima evolucao comercial sem implementar CRM completo prematuramente.
 
 - Definir politica futura para convites/criacao manual de usuarios no Supabase Auth.

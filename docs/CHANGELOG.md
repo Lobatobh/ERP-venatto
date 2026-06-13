@@ -115,3 +115,8 @@
 - Implementadas queries e server action server-side com isolamento por tenant ativo e sem aceitar `tenantId` do client.
 - Mantida regra simples: owner cria, member visualiza, RBAC completo permanece pendente.
 - Registrado teste manual do modulo Clientes/Leads V1 como pendente.
+- Concluida a Sprint 3B com validacao manual do modulo Clientes/Leads V1 como owner e member.
+- Confirmado que owner cria clientes/leads e member visualiza sem formulario de criacao.
+- Refinados textos, acentuacao e responsividade da lista de Clientes/Leads.
+- Confirmado que nao houve alteracao de schema, nova migration ou uso de `prisma db push`.
+- Registrado proximo sprint recomendado: Sprint 4A - Propostas V1 conectada a Cliente/Lead.

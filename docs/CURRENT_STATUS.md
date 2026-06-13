@@ -2,30 +2,24 @@
 
 ## Fase atual
 
-Sprint 3A - Modulo Clientes/Leads V1.
+Sprint 3B - Validacao manual assistida do modulo Clientes/Leads V1.
 
 ## Status
 
-Sprint 3A concluida tecnicamente. O modulo Clientes/Leads V1 foi criado como primeiro modulo real do VENATTO ERP, com schema versionado, migration aplicada, pagina real em `/app/clientes`, resumo por status, formulario de criacao para owner e listagem isolada por tenant.
+Sprint 3B concluida. O modulo Clientes/Leads V1 foi validado manualmente como owner e member, com ajustes pontuais de textos, acentuacao e responsividade da lista. Nenhum schema foi alterado, nenhuma migration foi criada e `prisma db push` nao foi usado.
 
-## Validacao da Sprint 3A
+## Validacao da Sprint 3B
 
-- Migration `add_customers_module_v1`: criada e aplicada com Prisma Migrate.
-- Model `Customer`: criado com `CustomerStatus` em UPPERCASE e tabela real `customers`.
-- Relacao `Tenant.customers`: adicionada ao schema.
-- Multi-tenant: queries e actions usam tenant ativo da sessao SaaS; `tenantId` nao vem do client.
-- Owner: pode criar clientes/leads.
-- Member: pode visualizar clientes/leads e nao recebe formulario de criacao.
-- `/app/clientes`: deixou de ser placeholder e passou a exibir modulo V1 real.
-- Resumo: total de registros, leads, clientes e propostas em andamento.
-- Formulario: nome obrigatorio, status validado por enum e campos opcionais normalizados.
-- Lista: exibe nome, contato, status e origem com estado vazio.
+- Owner: validado criando clientes/leads pela UI.
+- Member: validado visualizando a lista sem formulario de criacao.
+- Resumo: validado apos criacao de registro.
+- Lista: validada exibindo registros e ajustada para responsividade.
+- UX/labels: textos e acentuacao refinados.
+- Multi-tenant: regras existentes preservadas; `tenantId` continua vindo da sessao server-side.
+- Schema Prisma: sem alteracao.
+- Migration: nenhuma nova migration.
+- `prisma db push`: nao usado.
 - CRM completo, propostas, projetos, financeiro, producao e RBAC completo: pendentes.
-- `npx prisma validate`: executado com sucesso.
-- `npx prisma generate`: executado com sucesso.
-- `npm run lint`: executado com sucesso.
-- `npm run typecheck`: executado com sucesso.
-- `npm run build`: executado com sucesso.
 
 ## Escopo bloqueado
 

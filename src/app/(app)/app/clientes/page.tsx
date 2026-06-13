@@ -17,7 +17,7 @@ export default async function ClientesPage() {
         </p>
         <h1 className="text-2xl font-semibold tracking-normal">Clientes e Leads</h1>
         <p className="max-w-3xl text-sm text-muted-foreground">
-          Cadastro inicial de contatos comerciais da Venatto com isolamento por tenant e permissao simples por papel.
+          Cadastro inicial de contatos comerciais da Venatto com isolamento por tenant e permissão simples por papel.
         </p>
       </div>
 
@@ -36,7 +36,7 @@ export default async function ClientesPage() {
       {data.hasTenantAccess && !data.canCreate ? (
         <Card>
           <CardContent className="p-6 text-sm text-muted-foreground">
-            Voce pode visualizar os clientes e leads do tenant. A criacao esta restrita ao owner nesta versao.
+            Você pode visualizar os clientes e leads do tenant. A criação está restrita ao owner nesta versão.
           </CardContent>
         </Card>
       ) : null}

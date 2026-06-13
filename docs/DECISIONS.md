@@ -128,3 +128,7 @@ A Sprint 2 cria a estrutura navegacional do VENATTO ERP antes de implementar mod
 ## DEC-029 - Clientes/Leads como primeiro modulo real
 
 A Sprint 3A introduz Clientes/Leads V1 como primeiro modulo real do ERP. O modelo Customer pertence obrigatoriamente ao tenant ativo, usa enum CustomerStatus em UPPERCASE, permite criacao apenas por owner e visualizacao por member. CRM completo, propostas reais e RBAC completo continuam fora do escopo desta sprint.
+
+## DEC-030 - Refinamento do Clientes/Leads V1 sem nova modelagem
+
+A Sprint 3B foi limitada a validacao manual e ajustes pontuais de UX, labels e responsividade do modulo Clientes/Leads V1. Nenhum schema foi alterado, nenhuma migration foi criada e `prisma db push` permaneceu proibido.

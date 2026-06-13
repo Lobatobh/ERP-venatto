@@ -25,7 +25,7 @@ export function CustomerList({ customers }: CustomerListProps) {
       <CardHeader>
         <CardTitle>Lista de clientes e leads</CardTitle>
         <CardDescription>
-          Registros do tenant ativo. Nenhum dado de outro tenant e consultado.
+          Registros do tenant ativo. Nenhum dado de outro tenant é consultado.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -35,7 +35,7 @@ export function CustomerList({ customers }: CustomerListProps) {
           </div>
         ) : (
           <div className="overflow-hidden rounded-lg border border-border">
-            <div className="grid grid-cols-[1.2fr_1fr_0.8fr_0.8fr] gap-3 border-b bg-muted/50 px-4 py-3 text-xs font-medium uppercase tracking-normal text-muted-foreground">
+            <div className="hidden grid-cols-[1.2fr_1fr_0.8fr_0.8fr] gap-3 border-b bg-muted/50 px-4 py-3 text-xs font-medium uppercase tracking-normal text-muted-foreground md:grid">
               <span>Nome</span>
               <span>Contato</span>
               <span>Status</span>
@@ -44,7 +44,7 @@ export function CustomerList({ customers }: CustomerListProps) {
             <div className="divide-y divide-border">
               {customers.map((customer) => (
                 <div
-                  className="grid grid-cols-[1.2fr_1fr_0.8fr_0.8fr] gap-3 px-4 py-3 text-sm"
+                  className="grid gap-3 px-4 py-4 text-sm md:grid-cols-[1.2fr_1fr_0.8fr_0.8fr] md:py-3"
                   key={customer.id}
                 >
                   <div className="min-w-0">
@@ -62,7 +62,7 @@ export function CustomerList({ customers }: CustomerListProps) {
                       {statusLabels[customer.status]}
                     </span>
                   </div>
-                  <p className="truncate text-muted-foreground">{customer.source ?? "Nao informado"}</p>
+                  <p className="truncate text-muted-foreground">{customer.source ?? "Não informado"}</p>
                 </div>
               ))}
             </div>
